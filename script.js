@@ -6,37 +6,42 @@ var gen = {
             case "love":
                 title = gen.getRandArr(gen.loveSongs);
                 break;
+            case "drinking":
+                title = gen.getRandArr(gen.drinkingSongs);
+                break;
             default:
-                title = gen.getRandArr(gen.loveSongs);
+                title = gen.getRandArr(gen.loveSongs.concat(gen.drinkingSongs));
         }
 
         title = title
-            .replace(/getStoryType/g, function(){return gen.getStoryType()})
-            .replace(/getFemaleChar/g, function(){return gen.getFemaleChar()})
-            .replace(/getMaleChar/g, function(){return gen.getMaleChar()})
-            .replace(/getNeutralChar/g, function(){return gen.getNeutralChar()})
-            .replace(/getPeopleAdjective/g, function(){return gen.getPeopleAdjective()});
+            .replace(/getStoryType/g, function(){return gen.getRandArr(gen.storyType)})
+            .replace(/getFemaleChar/g, function(){return gen.getRandArr(gen.femaleChars)})
+            .replace(/getMaleChar/g, function(){return gen.getRandArr(gen.maleChars)})
+            .replace(/getNeutralChar/g, function(){return gen.getRandArr(gen.maleChars.concat(gen.femaleChars))})
+            .replace(/getDrinkingAdjective/g, function(){return gen.getRandArr(gen.adjectivesDrinking)})
+            .replace(/getDrinkingVessel/g, function(){return gen.getRandArr(gen.drinkingVessels)})
+            .replace(/getDrink/g, function(){return gen.getRandArr(gen.drinks)})
+            .replace(/getPeopleAdjective/g, function(){return gen.getRandArr(gen.adjectivesPeople)});
         
         return title;        
     },
     getRandArr: function(arr) {
         return arr[Math.floor(Math.random()*arr.length)]
     },
-    getStoryType: function() {
-        return gen.getRandArr(gen.storyType);
-    },
-    getMaleChar: function() {
-        return gen.getRandArr(gen.maleChars);
-    },
-    getFemaleChar: function() {
-        return gen.getRandArr(gen.femaleChars);
-    },
-    getNeutralChar: function() {
-        return gen.getRandArr(gen.maleChars.concat(gen.femaleChars));
-    },
-    getPeopleAdjective: function() {
-        return gen.getRandArr(gen.adjectivesPeople);
-    },
+    drinkingSongs: [
+        `Fill the getDrinkingVessel`,
+        `Pass the getDrinkingVessel`,
+        `Sling the getDrinkingAdjective getDrinkingVessel`,
+        `Bring us a getDrinkingAdjective getDrinkingVessel`,
+        `The getDrinkingAdjective getDrinkingVessel`,
+        `The merry getNeutralChar`,
+        `The jovial getNeutralChar`,
+        `The happy getNeutralChar`,
+        `The getNeutralChar's getDrinkingVessel`,
+        `A toast to the getNeutralChar`,
+        `A getDrinkingVessel of getDrink`,
+        `A toast to getDrink`
+    ],
     loveSongs: [
         `A getStoryType of the getFemaleChar who fell in love with a getMaleChar`,
         `A getStoryType of the romance between a getFemaleChar and a getMaleChar`,
@@ -67,6 +72,7 @@ var gen = {
         "barber",
         "butcher",
         "cobbler",
+        "peasant boy"
     ],
     femaleChars: [
         "shepherdess",
@@ -77,7 +83,8 @@ var gen = {
         "lady",
         "northern lass",
         "virgin",
-        "damsel"
+        "damsel",
+        "female smuggler"
     ],
     adjectivesPeople: [
         "loyal",
@@ -107,7 +114,32 @@ var gen = {
         "unfortunate",
         "fortunate",
         "faithless",
-        "dark-eyed"
+        "dark-eyed",
+        "forlorn"
+    ],
+    drinks: [
+        "English brown ale",
+        "ale",
+        "beer",
+        "wine",
+        "punch"
+    ],
+    adjectivesDrinking: [
+        "sparkling",
+        "flowing",
+        "midnight",
+        "social",
+        "lusty",
+        "precious"
+    ],
+    drinkingVessels: [
+        "bowl",
+        "jug",
+        "glass",
+        "bumper",
+        "cup",
+        "goblet",
+        "bottle"
     ],
     storyType: [
         "tragical ballad",
