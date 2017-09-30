@@ -96,5 +96,13 @@ var gen = {
 }
 
 document.getElementById('button-generate').onclick = function(e){
-    document.getElementById('output').innerHTML = gen.getTitle();
+    var output = document.getElementById('output');
+    var node = document.createElement("p");
+    output.innerHTML = "";
+
+    for (var i = 0 ; i < 10 ; i ++){
+        node = document.createElement("p");
+        node.appendChild(document.createTextNode(gen.getTitle()));
+        output.appendChild(node);
+    }
 }
