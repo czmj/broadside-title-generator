@@ -15,7 +15,7 @@ var gen = {
             .replace(/getFemaleChar/g, function(){return gen.getFemaleChar()})
             .replace(/getMaleChar/g, function(){return gen.getMaleChar()})
             .replace(/getNeutralChar/g, function(){return gen.getNeutralChar()})
-            .replace(/getLoveAdverb/g, function(){return gen.getLoveAdverb()});
+            .replace(/getPeopleAdjective/g, function(){return gen.getPeopleAdjective()});
         
         return title;        
     },
@@ -34,23 +34,26 @@ var gen = {
     getNeutralChar: function() {
         return gen.getRandArr(gen.maleChars.concat(gen.femaleChars));
     },
-    getLoveAdverb: function() {
-        return gen.getRandArr(gen.adverbsLove);
+    getPeopleAdjective: function() {
+        return gen.getRandArr(gen.adjectivesPeople);
     },
     loveSongs: [
-        `The getStoryType of the getFemaleChar who fell in love with a getMaleChar`,
-        `The getStoryType of the romance between a getFemaleChar and a getMaleChar`,
-        `The getLoveAdverb getNeutralChar`,
-        `The getLoveAdverb getNeutralChar's resolution`,
+        `A getStoryType of the getFemaleChar who fell in love with a getMaleChar`,
+        `A getStoryType of the romance between a getFemaleChar and a getMaleChar`,
+        `A getStoryType of the meeting of two getPeopleAdjective lovers`,
+        `The getPeopleAdjective getNeutralChar`,
+        `The getPeopleAdjective getNeutralChar's resolution`,
+        `The getPeopleAdjective getFemaleChar and the getPeopleAdjective getMaleChar`,
         `The getMaleChar's bride`,
-        `The getLoveAdverb lovers`,
-        `The getLoveAdverb lover's ghost`,
+        `The getNeutralChar's daughter`,
+        `The getPeopleAdjective lovers`,
+        `The getPeopleAdjective lover's ghost`,
         `The getNeutralChar's farewell`,
-        `The getLoveAdverb getMaleChar's answer to the getLoveAdverb getFemaleChar`,
+        `The getPeopleAdjective getMaleChar's answer to the getPeopleAdjective getFemaleChar`,
         `A curious love letter addressed to a getNeutralChar`,
         `The getFemaleChar's complaint to the getMaleChar`,
         `The getNeutralChar's lamentable tragedy`,
-        `The tragick ends of two getLoveAdverb lovers`
+        `The tragick ends of two getPeopleAdjective lovers`
     ],
     maleChars: [
         "serving man",
@@ -59,7 +62,11 @@ var gen = {
         "captain",
         "sailor",
         "young man",
-        "soldier"
+        "soldier",
+        "beggar",
+        "barber",
+        "butcher",
+        "cobbler",
     ],
     femaleChars: [
         "shepherdess",
@@ -69,9 +76,10 @@ var gen = {
         "seamstress",
         "lady",
         "northern lass",
-        "virgin"
+        "virgin",
+        "damsel"
     ],
-    adverbsLove: [
+    adjectivesPeople: [
         "loyal",
         "pining",
         "amorous",
@@ -84,14 +92,29 @@ var gen = {
         "constant",
         "slighted",
         "bashful",
-        "passionate"
+        "passionate",
+        "cruel",
+        "fat",
+        "ugly",
+        "wicked",
+        "poor",
+        "beautiful",
+        "brave",
+        "bucksome",
+        "handsome",
+        "bold",
+        "affectionate",
+        "unfortunate",
+        "fortunate",
+        "faithless",
+        "dark-eyed"
     ],
     storyType: [
         "tragical ballad",
         "strange and true account",
         "curious tale",
         "true relation of the tale",
-        "tragedy"
+        "tragick tale"
     ]
 }
 
